@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #bd5959; /* Warna latar belakang */
+}
+
+.container {
+    text-align: center;
+}
+
+.box {
+    background-color: rgb(185, 137, 137);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative; /* Agar tombol dapat dipindahkan dalam konteks box */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Jarak antar tombol */
+    position: relative; /* Agar roket dapat diposisikan di bawah tombol */
+}
+
+button {
+    color: rgb(250, 131, 40);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #000000; /* Warna saat hover */
+    color: rgb(0, 0, 0);
+}
+
+.rocket {
+    width: 20px; /* Lebar roket */
+    height: 20px; /* Tinggi roket */
+    background-color: red; /* Warna roket */
+    position: absolute;
+    bottom: -25px; /* Posisi di bawah tombol */
+    left: calc(50% - 10px); /* Memusatkan roket di bawah tombol */
+    display: none; /* Awalnya tidak ditampilkan */
+}
+
+@keyframes rocketAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-30px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
